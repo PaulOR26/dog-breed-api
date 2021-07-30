@@ -9,20 +9,41 @@ afterAll(() => client.close());
 
 describe('GET /api/breeds/:breed', () => {
   test('Status 200: Returns requested dog breed object', async () => {
-    const { body } = await request(app)
+    const { body: cocker } = await request(app)
       .get('/api/breeds/cockerspaniel')
       .expect(200);
 
-    expect(body.breedInformation).toEqual(
+    const { body: pug } = await request(app).get('/api/breeds/pug').expect(200);
+
+    expect(cocker.breedInformation).toEqual(
       expect.objectContaining({
         breed_param: 'cockerspaniel',
         breed: 'Cocker Spaniel',
         temperament: expect.any(String),
         characteristics: expect.any(String),
-        exercise_requirements: expect.any(String),
+        exercise: expect.any(String),
+        dog_url: expect.any(String),
+        size: 'Medium',
+      })
+    );
+
+    expect(pug.breedInformation).toEqual(
+      expect.objectContaining({
+        breed_param: 'pug',
+        breed: 'Pug',
+        temperament: expect.any(String),
+        characteristics: expect.any(String),
+        exercise: expect.any(String),
         dog_url: expect.any(String),
         size: 'Medium',
       })
     );
   });
+  // test('Status 404: Returns an error when requested dog breed does not exist', async () => {})
 });
+
+// GET /api/breeds
+//returns an array of all breeds
+
+// const breedArray = []
+// db.breeds.find().forEach((dog)=>{ breedArray.push(dog.breed) })
