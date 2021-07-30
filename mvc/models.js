@@ -1,4 +1,4 @@
-const client = require('./connection');
+const client = require('../db/connection');
 
 exports.findDogByBreed = async (breed) => {
   await client.connect();

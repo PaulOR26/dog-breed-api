@@ -1,4 +1,4 @@
-const { findDogByBreed } = require('./model');
+const { findDogByBreed } = require('../mvc/models');
 
 exports.getDogByBreed = (req, res) => {
   findDogByBreed(req.params.breed).then((result) => {

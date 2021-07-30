@@ -1,5 +1,5 @@
 const express = require('express');
-const { getDogByBreed } = require('./controllers');
+const { getDogByBreed } = require('./mvc/controllers');
 
 const app = express();
 
