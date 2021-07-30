@@ -9,7 +9,7 @@ const seed = async (data) => {
   client.db().createCollection('breeds');
 
   const collection = client.db().collection('breeds');
-  await collection.insertOne(data[0]);
+  await collection.insertMany(data);
 };
 
 module.exports = seed;
