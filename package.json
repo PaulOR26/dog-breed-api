@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/PaulOR26/dog-breed-api#readme",
   "devDependencies": {
+    "eslint": "^7.31.0",
+    "husky": "^7.0.1",
     "jest": "^27.0.6",
     "supertest": "^6.1.4"
   },
