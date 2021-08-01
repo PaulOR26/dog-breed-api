@@ -44,14 +44,20 @@ describe('GET /api/breeds/:breed', () => {
 
     expect(body.msg).toBe('notadog does not exist in database');
   });
-  // test('Status 404: Returns an error when requested dog breed does not exist', async () => {})
 });
+
+describe('ALL /* Not Found', () => {
+  test('Status 404: Returns error Path not recognised when invalid URL is used', async () => {
+    const { body } = await request(app).get('/api/breeeeds').expect(404);
+
+    expect(body.msg).toBe('Path not recognised');
+  });
+});
+
+// handleServerErrors
 
 // GET /api/breeds
 //returns an array of all breeds
 
 // const breedArray = []
 // db.breeds.find().forEach((dog)=>{ breedArray.push(dog.breed) })
-
-// describe('ALL /* Not Found', () => {
-//     test('Status 404: Returns error Path not recognised', async () => {
