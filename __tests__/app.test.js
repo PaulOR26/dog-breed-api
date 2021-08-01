@@ -56,15 +56,15 @@ describe('ALL /* Not Found', () => {
 
 describe('GET /api/breeds', () => {
   //SHOULD THIS RETURN BREED OBJECTS OR JUST A LIST OF BREEDS?
-  test('Status 200: Returns an array of breed objects', async () => {
+  test('Status 200: Returns an array of dog breed objects', async () => {
     const { body } = await request(app).get('/api/breeds').expect(200);
 
-    expect(Array.isArray(body.breeds)).toBe(true);
+    expect(Array.isArray(body.allDogs)).toBe(true);
 
-    //   expect(body.breeds).toHaveLength(???);  PUT MORE BREEDS IN THE TEST DATA
+    expect(body.allDogs).toHaveLength(2);
 
-    body.breeds.forEach((breed) => {
-      expect(breed).toEqual(
+    body.allDogs.forEach((dog) => {
+      expect(dog).toEqual(
         expect.objectContaining({
           breed_param: expect.any(String),
           breed: expect.any(String),
@@ -78,9 +78,3 @@ describe('GET /api/breeds', () => {
     });
   });
 });
-
-// GET /api/breeds
-//returns an array of all breeds
-
-// const breedArray = []
-// db.breeds.find().forEach((dog)=>{ breedArray.push(dog.breed) })

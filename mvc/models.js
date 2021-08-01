@@ -1,7 +1,7 @@
 const client = require('../db/connection');
 
 exports.findDogByBreed = async (breed) => {
-  await client.connect();
+  // await client.connect();
 
   const collection = client.db().collection('breeds');
 
@@ -13,4 +13,16 @@ exports.findDogByBreed = async (breed) => {
       msg: `${breed} does not exist in database`,
     });
   } else return { breedInformation: result };
+};
+exports.findAllDogs = async () => {
+  const breedArray = [];
+  // await client.connect();
+
+  const collection = client.db().collection('breeds');
+
+  await collection.find().forEach((dog) => {
+    breedArray.push(dog);
+  });
+
+  return { allDogs: breedArray };
 };

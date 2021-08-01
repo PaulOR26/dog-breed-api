@@ -1,5 +1,5 @@
 const express = require('express');
-const { getDogByBreed } = require('./mvc/controllers');
+const { getDogByBreed, getAllDogs } = require('./mvc/controllers');
 const {
   notFound,
   handleCustomerErrors,
@@ -8,6 +8,7 @@ const {
 
 const app = express();
 
+app.get('/api/breeds', getAllDogs);
 app.get('/api/breeds/:breed', getDogByBreed);
 
 app.all('*', notFound);
