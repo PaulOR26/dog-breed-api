@@ -1,10 +1,12 @@
 const express = require('express');
 const { getDogByBreed } = require('./mvc/controllers');
-const { handleCustomerErrors } = require('./errors/error-handlers');
+const { notFound, handleCustomerErrors } = require('./errors/error-handlers');
 
 const app = express();
 
 app.get('/api/breeds/:breed', getDogByBreed);
+
+app.all('*', notFound);
 
 app.use(handleCustomerErrors);
 
