@@ -54,8 +54,6 @@ describe('ALL /* Not Found', () => {
   });
 });
 
-// handleServerErrors
-
 // GET /api/breeds
 //returns an array of all breeds
 
