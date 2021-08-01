@@ -54,6 +54,30 @@ describe('ALL /* Not Found', () => {
   });
 });
 
+describe('GET /api/breeds', () => {
+  test('Status 200: Returns an array of breed objects', async () => {
+    const { body } = await request(app).get('/api/breeds').expect(200);
+
+    expect(Array.isArray(body.breeds)).toBe(true);
+
+    //   expect(body.breeds).toHaveLength(???);  HAVE THIS?
+
+    body.breeds.forEach((breed) => {
+      expect(breed).toEqual(
+        expect.objectContaining({
+          breed_param: expect.any(String),
+          breed: expect.any(String),
+          temperament: expect.any(String),
+          characteristics: expect.any(String),
+          exercise: expect.any(String),
+          dog_url: expect.any(String),
+          size: expect.any(String),
+        })
+      );
+    });
+  });
+});
+
 // GET /api/breeds
 //returns an array of all breeds
 
