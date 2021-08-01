@@ -55,12 +55,13 @@ describe('ALL /* Not Found', () => {
 });
 
 describe('GET /api/breeds', () => {
+  //SHOULD THIS RETURN BREED OBJECTS OR JUST A LIST OF BREEDS?
   test('Status 200: Returns an array of breed objects', async () => {
     const { body } = await request(app).get('/api/breeds').expect(200);
 
     expect(Array.isArray(body.breeds)).toBe(true);
 
-    //   expect(body.breeds).toHaveLength(???);  HAVE THIS?
+    //   expect(body.breeds).toHaveLength(???);  PUT MORE BREEDS IN THE TEST DATA
 
     body.breeds.forEach((breed) => {
       expect(breed).toEqual(
