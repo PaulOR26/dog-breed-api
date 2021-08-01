@@ -39,6 +39,11 @@ describe('GET /api/breeds/:breed', () => {
       })
     );
   });
+  test('Status 404: Returns an error when requested dog breed does not exist', async () => {
+    const { body } = await request(app).get('/api/breeds/notadog').expect(404);
+
+    expect(body.msg).toBe('notadog does not exist in database');
+  });
   // test('Status 404: Returns an error when requested dog breed does not exist', async () => {})
 });
 
@@ -47,3 +52,6 @@ describe('GET /api/breeds/:breed', () => {
 
 // const breedArray = []
 // db.breeds.find().forEach((dog)=>{ breedArray.push(dog.breed) })
+
+// describe('ALL /* Not Found', () => {
+//     test('Status 404: Returns error Path not recognised', async () => {

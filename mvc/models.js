@@ -7,5 +7,10 @@ exports.findDogByBreed = async (breed) => {
 
   const result = await collection.findOne({ breed_param: breed });
 
-  return { breedInformation: result };
+  if (!result) {
+    return Promise.reject({
+      status: 404,
+      msg: `${breed} does not exist in database`,
+    });
+  } else return { breedInformation: result };
 };
