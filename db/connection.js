@@ -7,7 +7,7 @@ require('dotenv').config({
 });
 
 if (!process.env.MONGODB_URI) {
-  throw new Error('MONGODB_URI or DATABASE_URL not set');
+  throw new Error('MONGO_ATLAS_URI or DATABASE_URL not set');
 }
 
 const uri = process.env.MONGODB_URI;
