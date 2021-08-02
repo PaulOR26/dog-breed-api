@@ -10,7 +10,7 @@ if (!process.env.MONGO_ATLAS_URI) {
   throw new Error('MONGO_ATLAS_URI or DATABASE_URL not set');
 }
 
-const uri = process.env.MONGODB_URI;
+const uri = process.env.MONGO_ATLAS_URI;
 
 const client = new MongoClient(uri);
 
