@@ -6,7 +6,7 @@ require('dotenv').config({
   path: path.resolve(__dirname, `../.env.${ENV}`),
 });
 
-if (!process.env.MONGO_ATLAS_URI) {
+if (!process.env.MONGODB_URI) {
   throw new Error('MONGO_ATLAS_URI or DATABASE_URL not set');
 }
 
