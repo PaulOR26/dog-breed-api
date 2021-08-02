@@ -55,7 +55,6 @@ describe('ALL /* Not Found', () => {
 });
 
 describe('GET /api/breeds', () => {
-  //SHOULD THIS RETURN BREED OBJECTS OR JUST A LIST OF BREEDS?
   test('Status 200: Returns an array of dog breed objects', async () => {
     const { body } = await request(app).get('/api/breeds').expect(200);
 

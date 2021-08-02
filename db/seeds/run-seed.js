@@ -6,4 +6,6 @@ const runSeed = () => {
   return seed(devData).then(() => client.close());
 };
 
-runSeed();
+runSeed().catch((err) => {
+  throw new Error('Error occurred during seed');
+});

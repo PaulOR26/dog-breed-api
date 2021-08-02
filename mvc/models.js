@@ -1,7 +1,7 @@
 const client = require('../db/connection');
 
 exports.findDogByBreed = async (breed) => {
-  // await client.connect();
+  await client.connect();
 
   const collection = client.db().collection('breeds');
 
@@ -16,7 +16,7 @@ exports.findDogByBreed = async (breed) => {
 };
 exports.findAllDogs = async () => {
   const breedArray = [];
-  // await client.connect();
+  await client.connect();
 
   const collection = client.db().collection('breeds');
 
