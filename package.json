@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "seed": "node ./db/seeds/run-seed.js"
+    "seed": "node ./db/seeds/run-seed.js",
+    "dev": "nodemon listen.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "eslint": "^7.31.0",
     "husky": "^7.0.1",
     "jest": "^27.0.6",
+    "nodemon": "^2.0.12",
     "supertest": "^6.1.4"
   },
   "dependencies": {
