@@ -21,7 +21,7 @@ app.use(express.urlencoded({ limit: '20mb' }));
 
 app.get('/api/breeds', getAllDogs);
 app.get('/api/breeds/:breed', getDogByBreed);
-app.get('/api/photo', getPrediction);
+app.post('/api/photo', getPrediction);
 
 app.all('*', notFound);
 

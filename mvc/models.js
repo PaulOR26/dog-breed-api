@@ -64,5 +64,5 @@ exports.runPrediction = async (imgTensor) => {
       confidences: confidences[label],
       label: label,
     },
-  }; // e.g. { Rottweiler: 1 }
+  };
 };
