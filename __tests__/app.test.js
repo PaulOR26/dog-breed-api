@@ -3,6 +3,7 @@ const testData = require('../db/data/test-data');
 const seed = require('../db/seeds/seed');
 const request = require('supertest');
 const app = require('../app');
+const { westie } = require('../utils/base64Images');
 
 beforeEach(() => seed(testData));
 afterAll(() => client.close());
