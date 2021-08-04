@@ -8,7 +8,7 @@
     "seed": "node ./db/seeds/run-seed.js",
     "dev": "nodemon listen.js",
     "start": "node listen.js",
-    "seed:prod": "NODE_ENV=production MONGO_ATLAS_URI=$(heroku config:get MONGODB_URI) npm run seed"
+    "seed:prod": "NODE_ENV=production MONGO_ATLAS_URI=$(heroku config:get MONGO_ATLAS_URI) npm run seed"
   },
   "repository": {
     "type": "git",
