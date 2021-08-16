@@ -26,7 +26,7 @@ module.exports = {
   },
   'GET /api/breeds/:breed': {
     description: 'serves a dog object',
-    queries: ['category', 'sort_by', 'order'],
+    queries: [],
     exampleResponse: {
       breedInformation: {
         _id: '610a844c07ab87a4addaa8f7',
