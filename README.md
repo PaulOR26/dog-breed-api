@@ -6,6 +6,8 @@ This was a project between [Sam-Jaya](https://github.com/Sam-Jaya), [lkelsall](h
 
 The aim was to build a mobile app that uses machine learning technology to identify a dog breed from a photo of the dog.
 
+## Technologies
+
 The front-end application was created using React Native / Expo.
 
 [Click here to view the front-end repo.](https://github.com/PaulOR26/dog-breed-identifier/blob/main/README.md)
@@ -13,6 +15,8 @@ The front-end application was created using React Native / Expo.
 The machine learning capability was accomplished with Tensorflow JS.
 
 The back-end API was created using Express JS.
+
+[Click here to view the hosted API.](https://dog-identifier-api.herokuapp.com/api)
 
 MongoDB and Mongo Atlas Cloud were used for the database.
 
