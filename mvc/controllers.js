@@ -1,6 +1,11 @@
 const tf = require('@tensorflow/tfjs-node');
 
+const apiInfo = require('../endpoints');
 const { findDogByBreed, findAllDogs, runPrediction } = require('../mvc/models');
+
+exports.getApi = (req, res) => {
+  res.send({ endPoints: apiInfo });
+};
 
 exports.getDogByBreed = (req, res, next) => {
   findDogByBreed(req.params.breed)
