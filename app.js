@@ -5,6 +5,7 @@ const {
   getDogByBreed,
   getAllDogs,
   getPrediction,
+  getApi,
 } = require('./mvc/controllers');
 const {
   notFound,
@@ -19,6 +20,7 @@ app.use(cors());
 app.use(express.json({ limit: '20mb' }));
 app.use(express.urlencoded({ limit: '20mb' }));
 
+app.get('/api', getApi);
 app.get('/api/breeds', getAllDogs);
 app.get('/api/breeds/:breed', getDogByBreed);
 app.post('/api/photo', getPrediction);
